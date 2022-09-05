@@ -1,0 +1,30 @@
+local mt = getrawmetatable(game)
+if make_writeable then
+    make_writeable(mt)
+elseif setreadonly then
+    setreadonly(mt, false)
+end
+
+local namecall = mt.__namecall
+
+mt.__namecall = newcclosure(function(self, ...)
+    local method = nil;
+    if getnamecallmethod then
+        method = getnamecallmethod()
+    elseif get_namecall_method then
+        method = get_namecall_method()
+    end
+    local args = {...}
+
+    if not checkcaller() then
+        if method == "FireServer" then
+            if getfenv(v).script.Name == "ClientCore" and type(args[2]) == "table" and type(args[2][1]) == "table" and type(args[2][1][1]) == "number" then
+                args[2][1] = {2.2400000095367, Vector3.new(1, 0.80, 4), Enum.PartType.Block, false}
+            end
+        elseif method == "Kick" then
+            return
+        end
+    end
+    return namecall(self, table.unpack(args))
+end)
+print "AntiCheat3"
